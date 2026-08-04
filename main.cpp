@@ -50,6 +50,32 @@ char character(char start, int offset)
 
 int main()
 {
-    cout << character('a', 1) << endl;
+    try
+    {
+        cout << character('a', 1) << endl;
+    }
+    catch (exception& e)
+    {
+        cout << e.what() << endl;
+    }
+
+    try
+    {
+        cout << character('a', -1) << endl;
+    }
+    catch (exception& e)
+    {
+        cout << e.what() << endl;
+    }
+
+    try
+    {
+        cout << character('Z', -1) << endl;
+    }
+    catch (exception& e)
+    {
+        cout << e.what() << endl;
+    }
+
     return 0;
 }
