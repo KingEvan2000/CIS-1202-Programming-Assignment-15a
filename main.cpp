@@ -21,8 +21,18 @@ public:
     }
 };
 
+char character(char start, int offset)
+{
+    if (!((start >= 'A' && start <= 'Z') || (start >= 'a' && start <= 'z')))
+    {
+        throw invalidCharacterException();
+    }
+
+    return start + offset;
+}
+
 int main()
 {
-    cout << "Exception classes created." << endl;
+    cout << character('a', 1) << endl;
     return 0;
 }
