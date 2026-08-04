@@ -28,7 +28,24 @@ char character(char start, int offset)
         throw invalidCharacterException();
     }
 
-    return start + offset;
+    char target = start + offset;
+
+    if (start >= 'A' && start <= 'Z')
+    {
+        if (target < 'A' || target > 'Z')
+        {
+            throw invalidRangeException();
+        }
+    }
+    else
+    {
+        if (target < 'a' || target > 'z')
+        {
+            throw invalidRangeException();
+        }
+    }
+
+    return target;
 }
 
 int main()
